@@ -12,7 +12,7 @@ import java.util.HashMap;
 @RequestMapping("/")
 public class HealthCheckController {
 
-    @GetMapping
+    @GetMapping("/health")
     public ResponseEntity<HashMap<String, String>> healthCheck() {
         HashMap<String, String> map = new HashMap<>();
         map.put("message", "It works");
