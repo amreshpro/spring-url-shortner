@@ -2,26 +2,32 @@ package com.amreshmaurya.url_shortner.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Data
+@Entity
+@Table(name = "urls")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "urls", indexes = {@Index(name = "idx_url", columnList = "url")})
+@Builder
 public class UrlEntity {
-
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID) // Auto-generate UUID
-    @Column(name = "id", updatable = false, nullable = false, unique = true)
-    private UUID id;
+    private UUID id ;
 
-    // @Lob // Allows storing long URLs
-    @Column(name = "url", nullable = false, unique = true)
-    private String url;
+    @Column(nullable = false, unique = true)
+    private String shortCode;
 
-    // Constructor for creating URL entity without ID (UUID is auto-generated)
-    public UrlEntity(String url) {
-        this.url = url;
-    }
+    @Column(nullable = false)
+    private String originalUrl;
+
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
+    @Column(nullable = false)
+    private LocalDateTime expiresAt;
+
 }
