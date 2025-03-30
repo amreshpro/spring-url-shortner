@@ -1,4 +1,4 @@
-package com.amreshmaurya.url_shortner.repository;
+package com.amreshmaurya.url_shortner.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,11 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.HashMap;
 
 @Service
-public class UrlShortnerService {
-
-  public ResponseEntity<String> testService(){
-        return  ResponseEntity.status(HttpStatus.OK).body("Service is working");
-    }
+public class UrlService {
 
 
     public ResponseEntity<HashMap<String,String>> urlForShorten(@RequestBody(required = true) HashMap<String,String> url){
