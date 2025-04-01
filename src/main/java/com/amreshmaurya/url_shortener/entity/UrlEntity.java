@@ -1,4 +1,4 @@
-package com.amreshmaurya.url_shortner.entity;
+package com.amreshmaurya.url_shortener.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

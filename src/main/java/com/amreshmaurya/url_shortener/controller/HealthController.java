@@ -1,4 +1,4 @@
-package com.amreshmaurya.url_shortner.controller;
+package com.amreshmaurya.url_shortener.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping("/")
-public class HealthCheckController {
+public class HealthController {
 
     @GetMapping("/health")
     public ResponseEntity<HashMap<String, String>> healthCheck() {

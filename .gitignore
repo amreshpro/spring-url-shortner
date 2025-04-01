@@ -33,3 +33,5 @@ build/
 .vscode/
 
 *.yaml
+*.log
+/logs
